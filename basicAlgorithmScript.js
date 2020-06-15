@@ -15,5 +15,10 @@ function largestOfFour(arr) {
     return maxArray;
   }
   
-  largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
-  
+ // largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+ 
+ function confirmEnding(str, target) {
+     return str;
+ }
+
+ console.log(confirmEnding("Bastian", "n"));
