@@ -1,5 +1,7 @@
-function titleCase(str) {
-  return str;
+var ages = [32, 33, 16, 40];
+
+function myFunction() {
+  return ages.filter(checkAdult = (age) = {age >= 18});
 }
 
-console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+console.log(myFunction);
