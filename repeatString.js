@@ -3,7 +3,7 @@ function repeatStringNumTimes(str, num) {
     return "";
   } else {
     let repeatStr = "";
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) { // for loop로 할 수 있다면 항상 recursive를 생각하자...
       repeatStr += str;
     }
     return repeatStr;
