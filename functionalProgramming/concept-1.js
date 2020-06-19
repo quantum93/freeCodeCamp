@@ -1,11 +1,13 @@
 /**
- * 이게 함수형 프로그래밍의 아주 단순한 예제이다. 함수를 다른 함수에서 
- * 호출해서 결과를 도출하는 형식. prepareTea 함수는 아무일도 하지 
- * 않고 있으므로 이 함수에 어떤 변화가 있어도 전체 코드의 결과는 동일
+ * We can modify getTea to accept a function as a parameter to be able to 
+ * change the type of tea it prepares. This makes getTea more flexible, 
+ * and gives the programmer more control when client requests change.
  */
-const prepareTea = () => 'greenTea';
 
-const getTea = (numOfCups) => {
+const prepareGreenTea = () => 'greenTea';
+const prepareBlackTea = () => 'blackTea';
+
+const getTea = (prepareTea, numOfCups) => {
   const teaCups = [];
   for(let cups = 1; cups <= numOfCups; cups += 1) {
     const teaCup = prepareTea();
@@ -14,4 +16,10 @@ const getTea = (numOfCups) => {
   return teaCups;
 };
 
-const tea4TeamFCC = getTea(40);
+const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
+const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
+
+console.log(
+  tea4GreenTeamFCC,
+  tea4BlackTeamFCC
+);
