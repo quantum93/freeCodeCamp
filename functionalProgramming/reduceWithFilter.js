@@ -125,3 +125,22 @@ function getRating(watchList){
   return averageRating = ratings/Object.keys(director).length;
 }
 console.log(getRating(watchList));
+
+/** 위의 방법은 두 단계로 먼저 director 배열을 filter를 통해서 뽑아내고
+ * 뽑아낸 객체로 구성된 배열에 대해서 reduce를 통해 특정 property값의 총합을 
+ * 계산한다. 그다음 총합을 배열의 길이로 나누어서 평균값을 얻는 단계적인 접근.
+ * 하지만 아래의 방법은 reduce() method안에서 위의 과정을 한번에 작업하는 로직
+ */
+
+function getRating2(watchList){
+  var count = 0;
+  var averageRating = watchList.reduce((sum,movie) =>  {
+    if (movie.Director == "Christopher Nolan") {
+      count+=1; // 조건식을 만족할때 마다 count가 증가한다. 
+      return sum + parseFloat(movie.imdbRating);
+    }
+    return sum;
+  }, 0) / count; // reduce전체의 결과에 대해서 count로 나눈다.
+  return averageRating;
+}
+console.log(getRating2(watchList));
